@@ -7,7 +7,8 @@ module.exports = {
     filename: "bundle.js"
   },
   devServer: {
-    contentBase: "public",
+    contentBase: path.join(__dirname, "public"),
+    historyApiFallback: true,
     overlay: true,
     hot: true,
     stats: {
@@ -16,6 +17,10 @@ module.exports = {
   },
   module: {
     rules: [
+      {
+        test: /\.scss$/,
+        use: ["style-loader", "css-loader", "sass-loader"]
+      },
       {
         test: /\.js$/,
         exclude: /node_modules/,
@@ -26,5 +31,6 @@ module.exports = {
         ]
       }
     ]
-  }
+  },
+  devtool: "source-map"
 };
