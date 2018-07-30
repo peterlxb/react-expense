@@ -6,10 +6,16 @@
   "license": "MIT",
   "scripts": {
     "start": "webpack-dev-server --hot --inline --mode development",
-    "build": "webpack --mode production"
+    "build": "webpack --mode production",
+    "test": "jest --watch"
+  },
+  "jest": {
+    "verbose": true,
+    "testURL": " http://localhost/"
   },
   "dependencies": {
     "axios": "^0.18.0",
+    "jest": "^23.4.2",
     "react": "^16.4.1",
     "react-dom": "^16.4.1",
     "react-modal": "^3.5.1",
